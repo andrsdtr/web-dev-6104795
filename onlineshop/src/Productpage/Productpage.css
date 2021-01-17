@@ -1,0 +1,26 @@
+
+.App {
+    text-align: center;
+}
+ 
+/* Putting albums into a grid */ 
+.albums {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+  
+/* Setting covers to same size */ 
+.albums img {
+width: 100%;
+}
+  
+/* Adding gap between albums */ 
+.album {
+padding: 20px;
+}
+  
+button {
+font-size: 20px;
+padding: 10px;
+}
+  
