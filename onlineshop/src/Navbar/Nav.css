@@ -1,0 +1,22 @@
+.App {
+    text-align: center
+}
+
+nav{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background: lightgrey;
+}
+
+.nav-elements{
+    list-style-type: none;
+    width: 50%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+li{
+    color: black;
+}

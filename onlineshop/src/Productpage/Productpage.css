@@ -6,12 +6,13 @@
 /* Putting albums into a grid */ 
 .albums {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
 }
   
-/* Setting covers to same size */ 
+/* Setting covers to same size + adding border*/ 
 .albums img {
 width: 100%;
+border: 2px solid black;
 }
   
 /* Adding gap between albums */ 
@@ -23,4 +24,11 @@ button {
 font-size: 20px;
 padding: 10px;
 }
-  
+
+ul {
+    list-style-type: none;
+    width: 50%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
