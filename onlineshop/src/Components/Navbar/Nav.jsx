@@ -13,7 +13,7 @@ function Nav() {
                 <Link to="/cart">
                     <li>Go to Cart</li>
                 </Link>
-                <Link to="/Checkout">
+                <Link to="/checkout">
                     <li>Checkout</li>
                 </Link>
            </ul>

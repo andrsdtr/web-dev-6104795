@@ -8,7 +8,7 @@ function Productpage() {
   const [cart, setCart] = useState([]);
   
   //creating a state to get a array where new albums can be added
-  const [albmums] = useState([
+  const [albums] = useState([
     {
         name: "Dark Side of the Moon",
         artist: "Pink Floyd",
@@ -49,7 +49,7 @@ function Productpage() {
         name: "Can't Buy A Thrill",
         artist: "Steely Dan",
         price: "18,99€",
-        cover: "https://images-na.ssl-images-amazon.com/images/I/915ZUQRj-rL._SL1500_.jpg"
+        cover: "https://3.bp.blogspot.com/-_GNI0Ofq9RY/TtNgBXgiBcI/AAAAAAAADMg/gVmqfS_kRJo/s1600/sdcbtfr.jpeg"
     },
     {
         name: "Gaucho",
@@ -67,14 +67,17 @@ function Productpage() {
         name: "I Robot",
         artist: "The Alan Parsons Project",
         price: "11,99€",
-        cover: "https://www.booknerds.de/wp-content/uploads/2017/08/13605484925_7327d87dd5_b.jpg"
+        cover: "https://images-na.ssl-images-amazon.com/images/I/81HtXJylR6L._SL1500_.jpg"
     }
   ])
   
   //function to add items to the cart
-  const addToCart = (albmum) => {
+  const addToCart = (album) => {
     //add album to the cart
-    setCart([...cart, albmum])
+    setCart([...cart, album])
+    console.log(album.name, "added du cart.")
+    console.log("Cart conatains", cart.length+1, "items.")
+    
   }
 
   return (
@@ -82,17 +85,16 @@ function Productpage() {
     <div className="App">
       <h1>Albums</h1>
       <div className="albums">
-        {albmums.map((albmum, index) => (
+        {albums.map((album, index) => (
             <div className="album" key={index}>
-              <h3>{albmum.name}</h3>
-              <pre>{albmum.artist}</pre>
-              <img src = {albmum.cover} alt = {albmum.cover}/>
-              <h4>{albmum.price}</h4>
-              <button onClick= {() => addToCart(albmum)}>Add to Cart</button>
+              <h3>{album.name}</h3>
+              <pre>{album.artist}</pre>
+              <img src = {album.cover} alt = {album.cover}/>
+              <h4>{album.price}</h4>
+              <button onClick= {() => addToCart(album)}>Add to Cart</button>
           </div> 
         ))}
       </div>
-      
     </div>
   );
 }

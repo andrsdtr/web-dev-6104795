@@ -1,0 +1,15 @@
+.cart{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background: lightgrey;
+    list-style-type: none;
+    width: 50%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.cart img{
+    width: 100%;
+}
