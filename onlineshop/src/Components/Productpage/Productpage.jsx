@@ -1,8 +1,9 @@
-import React from "react"
+import React, {useState, useEffect} from "react"
 import './Productpage.css';
-import {useState} from 'react';
 
-function Productpage() {
+const LOCAL_STORAGE_KEY = 'onlineshop.cart'
+
+function Productpage(props) {
   
   //creating a state for items in cart
   const [cart, setCart] = useState([]);
@@ -70,14 +71,30 @@ function Productpage() {
         cover: "https://images-na.ssl-images-amazon.com/images/I/81HtXJylR6L._SL1500_.jpg"
     }
   ])
-  
+
+  //save cart when page reloaded
+  useEffect(() => {
+    const storedCart = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY))
+    if (storedCart) setCart(storedCart)
+  }, [])
+
+  //save cart to local storage
+  useEffect(() => {
+    localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(cart))
+  }, [cart])
+
   //function to add items to the cart
   const addToCart = (album) => {
     //add album to the cart
     setCart([...cart, album])
+    props.updateCart(cart)
     console.log(album.name, "added du cart.")
     console.log("Cart conatains", cart.length+1, "items.")
     
+  }
+
+  function handleAddToCart(e) {
+      
   }
 
   return (
