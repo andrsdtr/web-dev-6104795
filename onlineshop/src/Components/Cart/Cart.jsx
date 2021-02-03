@@ -6,6 +6,12 @@ const LOCAL_STORAGE_KEY = 'onlineshop.cart'
 
 function Cart(props) {
     
+    function update() {
+        window.location.reload();
+        return false;
+    }
+
+    
 
     const [cart, setCart] = useState([]);
 
@@ -20,12 +26,16 @@ function Cart(props) {
         localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(cart))
     }, [cart])
 
-
+    function deleteItems() {
+        localStorage.clear();
+        update()
+    }
 
     return(
        <div>
            <h1>Your Cart</h1>
-           <button onClick= {() => localStorage.clear()}>Delete Cart</button>
+           <button onClick= {() => deleteItems()}>Delete Cart</button>
+           <button onClick= {() => update()}>Reload</button>
            {props.cartContent.map((album, index) => (
             <label className="cart" key={index}>
               <img src = {album.cover} alt = {album.cover}/>

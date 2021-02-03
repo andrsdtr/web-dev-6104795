@@ -88,13 +88,11 @@ function Productpage(props) {
     //add album to the cart
     setCart([...cart, album])
     props.updateCart(cart)
+    window.location.reload()
+    return false
     console.log(album.name, "added du cart.")
     console.log("Cart conatains", cart.length+1, "items.")
     
-  }
-
-  function handleAddToCart(e) {
-      
   }
 
   return (
