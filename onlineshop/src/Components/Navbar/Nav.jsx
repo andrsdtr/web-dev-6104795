@@ -5,16 +5,23 @@ import {Link} from 'react-router-dom';
 function Nav() {   
     return(
        <nav>
-           <h3>Logo</h3>
+           <div className="logo">
+                <div className="logo-img">
+                    <img src="https://toppng.com/uploads/preview/118-vinyl-record-clipart-free-clipart-plyta-winylowa-115631948768kdj8jbpag.png"></img>
+                </div>
+                <div>
+                    <h3 className="logo-text">Recordium</h3>
+                </div>
+           </div>
            <ul className="nav-elements">
                 <Link to="/productpage">
-                    <li>Albums</li>
+                    <a>Albums</a>
                 </Link>
                 <Link to="/cart">
-                    <li>Go to Cart</li>
+                    <a>Go to Cart</a>
                 </Link>
                 <Link to="/checkout">
-                    <li>Checkout</li>
+                    <a>Checkout</a>
                 </Link>
            </ul>
        </nav>

@@ -6,7 +6,18 @@ nav{
     display: flex;
     justify-content: space-around;
     align-items: center;
-    background: lightgrey;
+    background: rgb(243, 243, 243);
+}
+
+nav .logo-text {
+    text-transform: uppercase;
+    margin-left: 10px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: center
 }
 
 .nav-elements{
@@ -17,6 +28,16 @@ nav{
     align-items: center;
 }
 
-li{
+nav img {
+    height: 35px;
+}
+
+.nav-elements a{
     color: black;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+nav ul a:hover{
+    color: lightseagreen;
 }

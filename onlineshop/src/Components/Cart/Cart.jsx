@@ -30,20 +30,31 @@ function Cart(props) {
         localStorage.clear();
         update()
     }
+    
+    var total = 0;
+
+    //calculating total price
+    for (var i = 0; i < props.cartContent.length; i++) {
+        total = total + parseFloat(props.cartContent[i].price)
+        console.log(props.cartContent[i].price)
+    }
 
     return(
        <div>
            <h1>Your Cart</h1>
-           <button onClick= {() => deleteItems()}>Delete Cart</button>
-           <button onClick= {() => update()}>Reload</button>
-           {props.cartContent.map((album, index) => (
-            <label className="cart" key={index}>
-              <img src = {album.cover} alt = {album.cover}/>
-              <li>{album.name}</li>
-              <li>{album.artist}</li>            
-              <li>{album.price}</li>
-          </label> 
-          ))}
+           <button className="del-button" onClick= {() => deleteItems()}>Delete All Items</button>
+           <div> 
+                {props.cartContent.map((album, index) => (
+                <div className="cart" key={index}>
+                    <img src = {album.cover} alt = {album.cover}/>
+                    <a>{album.name}</a>
+                    <a>{album.artist}</a>            
+                    <a className="price">{album.price}</a>
+                    <button>Delete</button>
+                </div> 
+                ))}
+                <h2>Total: {total}€</h2>
+          </div>              
        </div>
     );
 }
