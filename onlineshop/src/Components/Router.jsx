@@ -31,7 +31,7 @@ class Router extends Component {
   }
   
   deleteCart (input) {
-    this.state.cart.splice(this.state.cart.indexOf(input), 1)
+    this.state.cart.splice(input, 1)
     localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(this.state.cart))
     this.forceUpdate()
   }
@@ -44,7 +44,7 @@ class Router extends Component {
                   <Switch>
                       <Route path="/" exact component={Productpage} />
                       <Route path="/productpage" render={(props) => <Productpage {... props} cartContent={this.state.cart} updateCart={this.updateCart.bind(this)}/>} />
-                      <Route path="/cart" render={(props) => <Cart {... props} cartContent={this.state.cart} updateCart={this.updateCart.bind(this)} deleteCart={this.deleteCart.bind()}/>} />
+                      <Route path="/cart" render={(props) => <Cart {... props} cartContent={this.state.cart} updateCart={this.updateCart.bind(this)} deleteCart={this.deleteCart.bind(this)}/>} />
                       <Route path="/checkout" component={Checkout} />   
                   </Switch>
             </div>

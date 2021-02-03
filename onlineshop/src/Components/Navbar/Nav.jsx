@@ -4,6 +4,7 @@ import {Link} from 'react-router-dom';
 
 function Nav() {   
     return(
+        //first div: logo, ul: assigning navbar elements to routs
        <nav>
            <div className="logo">
                 <div className="logo-img">

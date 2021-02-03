@@ -5,14 +5,7 @@ import {useState, useEffect} from 'react';
 const LOCAL_STORAGE_KEY = 'onlineshop.cart'
 
 function Cart(props) {
-    
-    function update() {
-        window.location.reload();
-        return false;
-    }
-
-    
-
+       
     const [cart, setCart] = useState([]);
 
     //save cart when page reloaded
@@ -26,9 +19,11 @@ function Cart(props) {
         localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(cart))
     }, [cart])
 
+    //function to delete local storage => Cartcontent
     function deleteItems() {
         localStorage.clear();
-        update()
+        window.location.reload();
+        return false;
     }
     
     var total = 0;
@@ -40,6 +35,7 @@ function Cart(props) {
     }
 
     return(
+       //rendering the array of cartContent
        <div>
            <h1>Your Cart</h1>
            <button className="del-button" onClick= {() => deleteItems()}>Delete All Items</button>
@@ -50,10 +46,10 @@ function Cart(props) {
                     <a>{album.name}</a>
                     <a>{album.artist}</a>            
                     <a className="price">{album.price}</a>
-                    <button>Delete</button>
+                     <button onClick={() => props.deleteCart(index)}>Delete</button>
                 </div> 
                 ))}
-                <h2>Total: {total}€</h2>
+                <h2 className="total">Total: {total}€</h2>
           </div>              
        </div>
     );

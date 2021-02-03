@@ -2,6 +2,7 @@
     text-align: center
 }
 
+/* Styling navbar */
 nav{
     display: flex;
     justify-content: space-around;
@@ -9,6 +10,7 @@ nav{
     background: rgb(243, 243, 243);
 }
 
+/* Styling logo */
 nav .logo-text {
     text-transform: uppercase;
     margin-left: 10px;
@@ -20,6 +22,7 @@ nav .logo-text {
     justify-content: center
 }
 
+/* Styling navbar-elements */
 .nav-elements{
     list-style-type: none;
     width: 50%;

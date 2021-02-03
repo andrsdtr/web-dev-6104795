@@ -56,7 +56,7 @@ function Productpage(props) {
         name: "Gaucho",
         artist: "Steely Dan",
         price: "17.99€",
-        cover: "https://media1.jpc.de/image/w600/front/0/0008811205522.jpg"
+        cover: "https://upload.wikimedia.org/wikipedia/en/8/8f/Steely_Dan_-_Gaucho.jpg"
     },
     {
         name: "Over-Nite Sensation",
@@ -83,18 +83,6 @@ function Productpage(props) {
     localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(cart))
   }, [cart])
 
-  //function to add items to the cart
-  const addToCart = (album) => {
-    //add album to the cart
-    setCart([...cart, album])
-    props.updateCart(cart)
-    window.location.reload()
-    return false
-    console.log(album.name, "added du cart.")
-    console.log("Cart conatains", cart.length+1, "items.")
-    
-  }
-
   return (
     //rendering the array of albums
     <div className="App">
@@ -106,7 +94,7 @@ function Productpage(props) {
               <pre>{album.artist}</pre>
               <img src = {album.cover} alt = {album.cover}/>
               <h4>{album.price}</h4>
-              <button onClick= {() => addToCart(album)}>Add to Cart</button>
+              <button onClick= {() => props.updateCart(album)}>Add to Cart</button>
           </div> 
         ))}
       </div>

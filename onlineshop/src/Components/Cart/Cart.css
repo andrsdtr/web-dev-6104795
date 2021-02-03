@@ -2,6 +2,15 @@ h1 {
     text-align: center;
 }
 
+.price {
+    font-weight: bold;
+}
+
+.total {
+    padding-left: 10px;
+}
+
+/* styling cards */
 .cart {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
@@ -29,6 +38,7 @@ h1 {
     margin: 10px;
 }
 
+/* Styling buttons */
 .cart button {
     border: none;
     outline: none;
@@ -53,8 +63,4 @@ button:hover {
     cursor: pointer;
     text-transform: uppercase;
     margin-left: 10px;
-}
-
-.price {
-    font-weight: bold;
 }
