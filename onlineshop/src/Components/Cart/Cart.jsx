@@ -21,9 +21,9 @@ function Cart(props) {
 
     //function to delete local storage => Cartcontent
     function deleteItems() {
-        localStorage.clear();
-        window.location.reload();
-        return false;
+        localStorage.clear()
+        window.location.reload()
+        return false
     }
     
     var total = 0;
@@ -49,7 +49,7 @@ function Cart(props) {
                      <button onClick={() => props.deleteCart(index)}>Delete</button>
                 </div> 
                 ))}
-                <h2 className="total">Total: {total}€</h2>
+                <h2 className="total">Total: {total.toFixed(2)}€</h2>
           </div>              
        </div>
     );
