@@ -35,6 +35,12 @@ class Router extends Component {
     localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(this.state.cart))
     this.forceUpdate()
   }
+
+  deleteCartAll () {
+    this.state.cart=[]
+    localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(this.state.cart))
+    this.forceUpdate()
+  }
   
   render() {
         return ( 
@@ -44,8 +50,8 @@ class Router extends Component {
                   <Switch>
                       <Route path="/" exact component={Productpage} />
                       <Route path="/productpage" render={(props) => <Productpage {... props} cartContent={this.state.cart} updateCart={this.updateCart.bind(this)}/>} />
-                      <Route path="/cart" render={(props) => <Cart {... props} cartContent={this.state.cart} updateCart={this.updateCart.bind(this)} deleteCart={this.deleteCart.bind(this)}/>} />
-                      <Route path="/checkout" component={Checkout} />   
+                      <Route path="/cart" render={(props) => <Cart {... props} cartContent={this.state.cart} updateCart={this.updateCart.bind(this)} deleteCart={this.deleteCart.bind(this)} deleteCartAll={this.deleteCartAll.bind(this)}/>} />
+                      <Route path="/checkout" render={(props) => <Checkout {... props} cartContent={this.state.cart} deleteCartAll={this.deleteCartAll.bind(this)}/>}/>   
                   </Switch>
             </div>
           </BrowserRouter> 

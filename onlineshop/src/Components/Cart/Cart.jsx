@@ -18,27 +18,19 @@ function Cart(props) {
     useEffect(() => {
         localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(cart))
     }, [cart])
-
-    //function to delete local storage => Cartcontent
-    function deleteItems() {
-        localStorage.clear()
-        window.location.reload()
-        return false
-    }
     
     var total = 0;
 
     //calculating total price
     for (var i = 0; i < props.cartContent.length; i++) {
         total = total + parseFloat(props.cartContent[i].price)
-        console.log(props.cartContent[i].price)
     }
 
     return(
        //rendering the array of cartContent
-       <div>
+       <div className="topDivCart">
            <h1>Your Cart</h1>
-           <button className="del-button" onClick= {() => deleteItems()}>Delete All Items</button>
+           <button className="del-button" onClick= {() => props.deleteCartAll()}>Delete All Items</button>
            <div> 
                 {props.cartContent.map((album, index) => (
                 <div className="cart" key={index}>
