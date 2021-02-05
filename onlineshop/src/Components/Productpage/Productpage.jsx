@@ -1,12 +1,9 @@
-import React, {useState, useEffect} from "react"
+import React, {useState} from "react"
 import './Productpage.css';
 
 const LOCAL_STORAGE_KEY = 'onlineshop.cart'
 
 function Productpage(props) {
-  
-  //creating a state for items in cart
-  const [cart, setCart] = useState([]);
   
   //creating a state to get a array where new albums can be added
   const [albums] = useState([
@@ -71,17 +68,6 @@ function Productpage(props) {
         cover: "https://images-na.ssl-images-amazon.com/images/I/81HtXJylR6L._SL1500_.jpg"
     }
   ])
-
-  //save cart when page reloaded
-  useEffect(() => {
-    const storedCart = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY))
-    if (storedCart) setCart(storedCart)
-  }, [])
-
-  //save cart to local storage
-  useEffect(() => {
-    localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(cart))
-  }, [cart])
 
   return (
     //rendering the array of albums

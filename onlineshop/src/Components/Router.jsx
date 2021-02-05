@@ -23,7 +23,7 @@ class Router extends Component {
     this.forceUpdate()
   }
 
-  //2 callback functions to update cart
+  //3 callback functions to update cart
   updateCart (input) {
     this.state.cart.push(input)
     localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(this.state.cart))
@@ -60,17 +60,3 @@ class Router extends Component {
 }
 
 export default Router;
-
-/*
-<BrowserRouter>  
-            <div>
-              <Nav/>
-                  <Switch>
-                      <Route path="/" exact component={Productpage} />
-                      <Route path="/productpage" component={Productpage} />
-                      <Route path="/cart" component={Cart} />
-                      <Route path="/checkout" component={Checkout} />   
-                  </Switch>
-            </div>
-          </BrowserRouter> 
-*/

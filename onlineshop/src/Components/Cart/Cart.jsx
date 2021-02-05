@@ -14,11 +14,6 @@ function Cart(props) {
         if (storedCart) setCart(storedCart)
     }, [])
 
-    //save cart to local storage
-    useEffect(() => {
-        localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(cart))
-    }, [cart])
-
     //calculating total price
     var total = 0;
     for (var i = 0; i < props.cartContent.length; i++) {
@@ -46,7 +41,7 @@ function Cart(props) {
             </div>
             <div id="cartNotEmpty" className="hide">
                 <h1>Your Cart</h1>
-                <button className="delButton" onClick= {() => props.deleteCartAll()}>Delete All Items</button>
+                <button className="delButton" onClick= {() => props.deleteCartAll()}>Clear cart</button>
                 <div> 
                     {props.cartContent.map((album, index) => (
                     <div className="cart" key={index}>
