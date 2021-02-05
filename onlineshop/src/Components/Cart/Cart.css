@@ -66,7 +66,7 @@ button:hover {
     background: lightseagreen;
 }
 
-.del-button {
+.delButton {
     border: none;
     outline: none;
     background: #333;
@@ -75,4 +75,54 @@ button:hover {
     cursor: pointer;
     text-transform: uppercase;
     margin-left: 10px;
+}
+
+/* Classes to show/hide parts of the page */
+.showCartNotEmpty{
+    display: block;
+}
+
+.hide{
+    display: none;
+}
+
+/* Styling empty cart page */
+.showCartEmpty{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    max-width: 100%;  
+    margin-top: 55px;
+}
+
+.showCartEmpty h1{
+    font-size: 100px;
+    text-align: left;
+    text-transform: uppercase;
+    margin: 0px;
+    margin-left: 30px;
+    margin-right: 30px;
+    margin-bottom: 10px;
+    color: rgb(19, 19, 19);
+}
+
+.showCartEmpty img{
+    width: 500px;
+    margin: 50px;    
+}
+
+.cartEmptyText {
+    margin-top: auto;
+    margin-bottom: auto;
+    animation-name: shadowAnimation;
+    animation-duration: 2.5s;
+    animation-iteration-count: infinite;
+}
+
+/*Animation for cart is empty text */
+@keyframes shadowAnimation{
+    0% {transform: rotate(5deg);}
+    50% {transform: rotate(-5deg);}
+    100% {transform: rotate(5deg);}
 }

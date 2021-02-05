@@ -33,6 +33,14 @@ nav .logo-text {
 
 nav img {
     height: 35px;
+    animation-name: spinAnimation;
+    animation-duration: 2.5s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes spinAnimation{
+    from{transform: rotate(0deg);}
+    to{transform: rotate(360deg);}
 }
 
 .nav-elements a{

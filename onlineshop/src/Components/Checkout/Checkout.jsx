@@ -48,17 +48,24 @@ function Checkout(props) {
 
     //function to direct back to homepage when checkout is complete
     function reviewFunction() {
-        document.getElementById("delivery").className = "deliveryShow"
         document.getElementById("review").className = "reviewHide"
+        document.getElementById("titleInfo").className = "titleInfoHide"
+        document.getElementById("message").className = "checkoutMessageShow"
         props.deleteCartAll()
     }
 
     return(
         <div className="topDivCheckout">
-            <h1>Checkout</h1>
-            <div classname="items-price">
-                <label className="label-items">{items} items</label>
-                <label className="label-price">{total.toFixed(2)}€</label>
+            <div id="message" className="checkoutMessageHide">
+                <h1>Thank you for your purchase!</h1>
+                <img src="https://media0.giphy.com/media/A1gM5nXW9XSLMj8BO2/giphy.gif?cid=ecf05e476zt3ynt8qjgts4m4ggconwr493eq5tguhelwabez&rid=giphy.gif"/>
+            </div>
+            <div id="titleInfo" classname="titleInfoShow">
+                <h1>Checkout</h1>
+                <div classname="items-price">
+                    <label className="label-items">{items} items</label>
+                    <label className="label-price">{total.toFixed(2)}€</label>
+                </div>
             </div>
             <div className="checkout">
                 <div id = "delivery" className="deliveryShow">

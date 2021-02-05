@@ -25,6 +25,14 @@
     font-weight: bold;
 }
 
+.titleInfoShow{
+    display: block;
+}
+
+.titleInfoHide{
+    display: none;
+}
+
 /* centering shown page */
 .checkout{
     text-align: center;
@@ -209,4 +217,17 @@
 
 .checkout button:hover {
     background: lightseagreen;
+}
+
+/* Styling checkout message */
+.checkoutMessageHide{
+    display: none;
+}
+
+.checkoutMessageShow{
+    display: block;
+}
+
+.checkoutMessageShow h1{
+    font-size: 50px;
 }
